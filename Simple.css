@@ -1,0 +1,12 @@
+.root
+{
+	-fx-background-color : pink;
+	-fx-font-family: "sans-serif";
+	-fx-font-size: 24pt;
+
+}
+.button
+{
+	-fx-font-family: "serif";
+	-fx-font-size: 12pt;
+}
