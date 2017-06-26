@@ -8,9 +8,9 @@ import javafx.scene.layout.Pane;
 import javafx.event.ActionEvent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.web.WebView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 
 public class Main
 {
@@ -71,20 +71,28 @@ public class Main
     }
 
     private static void playShrek(){
-        WebView webview = new WebView();
-        webview.getEngine().load("https://www.youtube.com/embed/Fdqu0nJynfo?autoplay=1");
-        webview.setPrefSize(640, 390);
+        Media media = new Media(Main.class.getResource("shrek.mp4").toString()); 
+        MediaPlayer mediaplayer = new MediaPlayer(media);    
+        mediaplayer.setAutoPlay(true);
+        MediaView mediaview = new MediaView(mediaplayer);    
+        mediaview.setFitWidth(720);
+        mediaview.setFitHeight(405);
+        Pane mediapane = new Pane(mediaview);        
         Stage stage = new Stage();
-        stage.setScene(new Scene(webview));
+        stage.setScene(new Scene(mediapane));
         stage.show();
     }
 
     private static void playPigeon(){
-        WebView webview = new WebView();
-        webview.getEngine().load("https://www.youtube.com/embed/7DuRtcosetQ?autoplay=1");
-        webview.setPrefSize(640, 390);
+        Media media = new Media(Main.class.getResource("storks.mp4").toString()); 
+        MediaPlayer mediaplayer = new MediaPlayer(media);    
+        mediaplayer.setAutoPlay(true);
+        MediaView mediaview = new MediaView(mediaplayer);    
+        mediaview.setFitWidth(720);
+        mediaview.setFitHeight(405);
+        Pane mediapane = new Pane(mediaview);        
         Stage stage = new Stage();
-        stage.setScene(new Scene(webview));
+        stage.setScene(new Scene(mediapane));
         stage.show();
     }
 
